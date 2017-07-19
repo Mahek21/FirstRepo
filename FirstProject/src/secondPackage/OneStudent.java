@@ -11,6 +11,7 @@ public class OneStudent {
 	private int id;
 	private FileToVector ftv;
 	private final String filePath = "D:\\Users\\student-2017\\Desktop\\PopularNames.txt";
+	private PatternMatch patternmatch;
 
 	public OneStudent(String input) throws Exception{
 		super();
@@ -40,7 +41,13 @@ public class OneStudent {
 					throw new Exception(ar[1]+" not found in the name directory!");
 				}
 				//Checking third @param : lastName
-				
+				boolean checkLastName = patternmatch.patternMatch(ar[2], "([A-Z][a-z]*-[A-Z][a-z]*)|([A-Z][a-z]*)");
+				if(checkLastName){
+					throw new Exception("Input " + ar[2] +" is invalid");
+				}
+				else{
+					
+				}
 			
 			}
 			catch(Exception e){
