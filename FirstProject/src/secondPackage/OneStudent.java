@@ -9,9 +9,13 @@ public class OneStudent {
 	private String firstName;
 	private String lastName;
 	private int id;
-	private FileToVector ftv;
+	private ReadFile ftv;
 	private final String filePath = "D:\\Users\\student-2017\\Desktop\\PopularNames.txt";
 	private PatternMatch patternmatch;
+	
+	{
+		gender = gender.ERROR;
+	}
 
 	public OneStudent(String input) throws Exception{
 		super();
@@ -28,7 +32,7 @@ public class OneStudent {
 				}
 				// Checking second @param : firstName
 				Vector<String> vec = new Vector<String>();
-				vec = ftv.fileToVector(filePath);
+				vec = ftv.read(filePath);
 				int count = 0;
 				for (String s: vec) {
 					if(s.equalsIgnoreCase(ar[1])){

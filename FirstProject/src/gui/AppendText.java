@@ -112,11 +112,9 @@ public class AppendText extends JFrame {
 			String line = getTextField().getText();
 			String longText = getTextArea().getText();
 			if(getCheckBox().isSelected()){
-				getTextArea().setText("");
 				getTextArea().setText(line+"\n"+longText);
 			}
 			else{
-				getTextArea().setText("");
 				getTextArea().setText(longText+"\n"+line);
 			}
 		}

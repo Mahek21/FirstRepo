@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class FileToVector {
+public class ReadFile {
 
-	public Vector<String> fileToVector(String fn) throws IOException {
+	public Vector<String> read(String fn) throws IOException {
 		Vector<String> result= new Vector<String>();
 		Scanner sc= new Scanner(new File(fn)); 
 		while (sc.hasNextLine()) {
