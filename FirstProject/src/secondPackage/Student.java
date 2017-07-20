@@ -9,8 +9,7 @@ public class Student {
 	protected Vector<OneStudent> data = new Vector<OneStudent>();
 
 	public void readFromFile(String fn) throws Exception {
-		ReadFile ftv = new ReadFile();
-		Vector<String> inData = ftv.read(fn);
+		Vector<String> inData = ReadFile.read(fn);
 		for (String line : inData) {
 			try {
 				OneStudent one = new OneStudent(line);

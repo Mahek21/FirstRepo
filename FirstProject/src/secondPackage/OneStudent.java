@@ -9,12 +9,11 @@ public class OneStudent {
 	private String firstName;
 	private String lastName;
 	private int id;
-	private ReadFile ftv;
 	private final String filePath = "D:\\Users\\student-2017\\Desktop\\PopularNames.txt";
 	private PatternMatch patternmatch;
 	
 	{
-		gender = gender.ERROR;
+		gender = Gender.ERROR;
 	}
 
 	public OneStudent(String input) throws Exception{
@@ -31,8 +30,9 @@ public class OneStudent {
 					throw new Exception("Input " + ar[0] + " is not allowed!");
 				}
 				// Checking second @param : firstName
+				//ftv = new ReadFile();
 				Vector<String> vec = new Vector<String>();
-				vec = ftv.read(filePath);
+				vec = ReadFile.read(filePath);
 				int count = 0;
 				for (String s: vec) {
 					if(s.equalsIgnoreCase(ar[1])){
@@ -45,12 +45,12 @@ public class OneStudent {
 					throw new Exception(ar[1]+" not found in the name directory!");
 				}
 				//Checking third @param : lastName
-				boolean checkLastName = patternmatch.patternMatch(ar[2], "([A-Z][a-z]*-[A-Z][a-z]*)|([A-Z][a-z]*)");
+				boolean checkLastName = PatternMatch.patternMatch(ar[2], "([A-Z][a-z]*-[A-Z][a-z]*)|([A-Z][a-z]*)");
 				if(checkLastName){
-					throw new Exception("Input " + ar[2] +" is invalid");
+					setLastName(ar[2]);
 				}
 				else{
-					
+					throw new Exception("Input " + ar[2] +" is invalid");
 				}
 			
 			}
