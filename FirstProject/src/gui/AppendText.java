@@ -83,6 +83,7 @@ public class AppendText extends JFrame {
 		textField.setColumns(10);
 		
 		textArea = new JTextArea();
+		textArea.setEditable(false);
 		contentPane.add(textArea, BorderLayout.CENTER);
 	}
 
